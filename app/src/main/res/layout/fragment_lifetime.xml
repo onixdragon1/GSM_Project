@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/IntroduceTv"
+        android:text="@string/Lifetime"
+        android:layout_gravity="center_horizontal"
+        android:textSize="30sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="25dp"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- Player Section -->
+            <TableRow android:layout_marginBottom="15dp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_height="165dp"
+                    android:layout_width="match_parent"
+                    app:cardCornerRadius="15dp"
+                    android:elevation="5dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_span="2"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="30sp"
+                        android:text="Player"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="5dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:text="0000"
+                        android:layout_gravity="bottom"
+                        android:layout_marginBottom="25dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:text="Summarized Information"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="15dp"/>
+
+                </androidx.cardview.widget.CardView>
+
+            </TableRow>
+
+            <!-- score/playtime Section -->
+            <TableRow android:layout_marginBottom="15dp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_height="165dp"
+                    android:layout_width="165dp"
+                    app:cardCornerRadius="15dp"
+                    android:elevation="5dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:text="score"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="5dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:text="0000"
+                        android:layout_gravity="bottom"
+                        android:layout_marginBottom="25dp"/>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_height="165dp"
+                    android:layout_width="165dp"
+                    app:cardCornerRadius="15dp"
+                    android:elevation="5dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:text="playtime"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="5dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:text="0000"
+                        android:layout_gravity="bottom"
+                        android:layout_marginBottom="25dp"/>
+
+                </androidx.cardview.widget.CardView>
+
+            </TableRow>
+
+            <!-- turn_count/match_count Section -->
+            <TableRow android:layout_marginBottom="15dp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_height="165dp"
+                    android:layout_width="165dp"
+                    app:cardCornerRadius="15dp"
+                    android:elevation="5dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:text="turn_count"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="5dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:text="0000"
+                        android:layout_gravity="bottom"
+                        android:layout_marginBottom="25dp"/>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_height="165dp"
+                    android:layout_width="165dp"
+                    app:cardCornerRadius="15dp"
+                    android:elevation="5dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:text="match_count"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="5dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:text="0000"
+                        android:layout_gravity="bottom"
+                        android:layout_marginBottom="25dp"/>
+
+                </androidx.cardview.widget.CardView>
+
+            </TableRow>
+
+            <!-- win_count/spawned_alias Section -->
+            <TableRow android:layout_marginBottom="15dp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_height="165dp"
+                    android:layout_width="165dp"
+                    app:cardCornerRadius="15dp"
+                    android:elevation="5dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:text="win_count"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="5dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:text="0000"
+                        android:layout_gravity="bottom"
+                        android:layout_marginBottom="25dp"/>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_height="165dp"
+                    android:layout_width="165dp"
+                    app:cardCornerRadius="15dp"
+                    android:elevation="5dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:text="spawned_alias"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="5dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:text="0000"
+                        android:layout_gravity="bottom"
+                        android:layout_marginBottom="25dp"/>
+
+                </androidx.cardview.widget.CardView>
+
+            </TableRow>
+
+            <!-- killed_alias/killed_hostiles Section -->
+            <TableRow android:layout_marginBottom="15dp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_height="165dp"
+                    android:layout_width="165dp"
+                    app:cardCornerRadius="15dp"
+                    android:elevation="5dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:text="killed_alias"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="5dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:text="0000"
+                        android:layout_gravity="bottom"
+                        android:layout_marginBottom="25dp"/>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_height="165dp"
+                    android:layout_width="165dp"
+                    app:cardCornerRadius="15dp"
+                    android:elevation="5dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:text="killed_hostiles"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="5dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:text="0000"
+                        android:layout_gravity="bottom"
+                        android:layout_marginBottom="25dp"/>
+
+                </androidx.cardview.widget.CardView>
+
+            </TableRow>
+
+            <!-- damage/heal Section -->
+            <TableRow android:layout_marginBottom="15dp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_height="165dp"
+                    android:layout_width="165dp"
+                    app:cardCornerRadius="15dp"
+                    android:elevation="5dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:text="damage"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="5dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:text="0000"
+                        android:layout_gravity="bottom"
+                        android:layout_marginBottom="25dp"/>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_height="165dp"
+                    android:layout_width="165dp"
+                    app:cardCornerRadius="15dp"
+                    android:elevation="5dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:text="heal"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="5dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:text="0000"
+                        android:layout_gravity="bottom"
+                        android:layout_marginBottom="25dp"/>
+
+                </androidx.cardview.widget.CardView>
+
+            </TableRow>
+
+        </TableLayout>
+
+    </ScrollView>
+
+</LinearLayout>
