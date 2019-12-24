@@ -42,7 +42,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="30sp"
+                        android:textSize="40sp"
                         android:text="Player"
                         android:layout_marginTop="10dp"
                         android:layout_marginLeft="5dp"/>
@@ -59,7 +59,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20sp"
+                        android:textSize="25sp"
                         android:text="Summarized Information"
                         android:layout_gravity="center"
                         android:layout_marginBottom="15dp"/>
@@ -84,7 +84,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20sp"
+                        android:textSize="35sp"
                         android:text="score"
                         android:layout_marginTop="10dp"
                         android:layout_marginLeft="5dp"/>
@@ -113,7 +113,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20sp"
+                        android:textSize="35sp"
                         android:text="playtime"
                         android:layout_marginTop="10dp"
                         android:layout_marginLeft="5dp"/>
@@ -147,7 +147,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20sp"
+                        android:textSize="35sp"
                         android:text="turn_count"
                         android:layout_marginTop="10dp"
                         android:layout_marginLeft="5dp"/>
@@ -176,7 +176,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20sp"
+                        android:textSize="35sp"
                         android:text="match_count"
                         android:layout_marginTop="10dp"
                         android:layout_marginLeft="5dp"/>
@@ -213,7 +213,7 @@
                         android:layout_marginLeft="5dp"
                         android:layout_marginTop="10dp"
                         android:text="win_count"
-                        android:textSize="20sp" />
+                        android:textSize="35sp" />
 
                     <TextView
                         android:id="@+id/lifetime_winCountTv"
@@ -242,7 +242,7 @@
                         android:layout_marginLeft="5dp"
                         android:layout_marginTop="10dp"
                         android:text="spawned_alias"
-                        android:textSize="20sp" />
+                        android:textSize="35sp" />
 
                     <TextView
                         android:id="@+id/lifetime_spawnedAliasTv"
@@ -273,7 +273,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20sp"
+                        android:textSize="35sp"
                         android:text="killed_alias"
                         android:layout_marginTop="10dp"
                         android:layout_marginLeft="5dp"/>
@@ -302,7 +302,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20sp"
+                        android:textSize="35sp"
                         android:text="killed_hostiles"
                         android:layout_marginTop="10dp"
                         android:layout_marginLeft="5dp"/>
@@ -336,7 +336,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20sp"
+                        android:textSize="35sp"
                         android:text="damage"
                         android:layout_marginTop="10dp"
                         android:layout_marginLeft="5dp"/>
@@ -365,7 +365,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20sp"
+                        android:textSize="35sp"
                         android:text="heal"
                         android:layout_marginTop="10dp"
                         android:layout_marginLeft="5dp"/>
