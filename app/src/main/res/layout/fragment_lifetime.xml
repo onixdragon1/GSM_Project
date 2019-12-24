@@ -22,13 +22,14 @@
 
         <TableLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp">
 
             <!-- Player Section -->
             <TableRow android:layout_marginBottom="15dp">
 
                 <androidx.cardview.widget.CardView
-                    android:layout_height="165dp"
+                    android:layout_height="355dp"
                     android:layout_width="match_parent"
                     app:cardCornerRadius="15dp"
                     android:elevation="5dp"
@@ -52,7 +53,8 @@
                         android:textSize="20sp"
                         android:text="0000"
                         android:layout_gravity="bottom"
-                        android:layout_marginBottom="25dp"/>
+                        android:layout_marginBottom="25dp"
+                        android:id="@+id/lifetime_playerTv"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -70,8 +72,8 @@
             <TableRow android:layout_marginBottom="15dp">
 
                 <androidx.cardview.widget.CardView
-                    android:layout_height="165dp"
-                    android:layout_width="165dp"
+                    android:layout_height="355dp"
+                    android:layout_width="355dp"
                     app:cardCornerRadius="15dp"
                     android:elevation="5dp"
                     android:layout_marginLeft="20dp"
@@ -93,13 +95,14 @@
                         android:textSize="15sp"
                         android:text="0000"
                         android:layout_gravity="bottom"
-                        android:layout_marginBottom="25dp"/>
+                        android:layout_marginBottom="25dp"
+                        android:id="@+id/lifetime_scoreTv"/>
 
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:layout_height="165dp"
-                    android:layout_width="165dp"
+                    android:layout_height="355dp"
+                    android:layout_width="355dp"
                     app:cardCornerRadius="15dp"
                     android:elevation="5dp"
                     android:layout_marginLeft="20dp"
@@ -121,7 +124,8 @@
                         android:textSize="15sp"
                         android:text="0000"
                         android:layout_gravity="bottom"
-                        android:layout_marginBottom="25dp"/>
+                        android:layout_marginBottom="25dp"
+                        android:id="@+id/lifetime_playtimeTv"/>
 
                 </androidx.cardview.widget.CardView>
 
@@ -131,8 +135,8 @@
             <TableRow android:layout_marginBottom="15dp">
 
                 <androidx.cardview.widget.CardView
-                    android:layout_height="165dp"
-                    android:layout_width="165dp"
+                    android:layout_height="355dp"
+                    android:layout_width="355dp"
                     app:cardCornerRadius="15dp"
                     android:elevation="5dp"
                     android:layout_marginLeft="20dp"
@@ -154,13 +158,14 @@
                         android:textSize="15sp"
                         android:text="0000"
                         android:layout_gravity="bottom"
-                        android:layout_marginBottom="25dp"/>
+                        android:layout_marginBottom="25dp"
+                        android:id="@+id/lifetime_turnCountTv"/>
 
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:layout_height="165dp"
-                    android:layout_width="165dp"
+                    android:layout_height="355dp"
+                    android:layout_width="355dp"
                     app:cardCornerRadius="15dp"
                     android:elevation="5dp"
                     android:layout_marginLeft="20dp"
@@ -182,7 +187,8 @@
                         android:textSize="15sp"
                         android:text="0000"
                         android:layout_gravity="bottom"
-                        android:layout_marginBottom="25dp"/>
+                        android:layout_marginBottom="25dp"
+                        android:id="@+id/lifetime_matchCountTv"/>
 
                 </androidx.cardview.widget.CardView>
 
@@ -192,58 +198,60 @@
             <TableRow android:layout_marginBottom="15dp">
 
                 <androidx.cardview.widget.CardView
-                    android:layout_height="165dp"
-                    android:layout_width="165dp"
-                    app:cardCornerRadius="15dp"
-                    android:elevation="5dp"
+                    android:layout_width="355dp"
+                    android:layout_height="355dp"
                     android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
                     android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp">
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="5dp"
+                    android:elevation="5dp"
+                    app:cardCornerRadius="15dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20sp"
-                        android:text="win_count"
+                        android:layout_marginLeft="5dp"
                         android:layout_marginTop="10dp"
-                        android:layout_marginLeft="5dp"/>
+                        android:text="win_count"
+                        android:textSize="20sp" />
 
                     <TextView
+                        android:id="@+id/lifetime_winCountTv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="15sp"
-                        android:text="0000"
                         android:layout_gravity="bottom"
-                        android:layout_marginBottom="25dp"/>
+                        android:layout_marginBottom="25dp"
+                        android:text="0000"
+                        android:textSize="15sp" />
 
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:layout_height="165dp"
-                    android:layout_width="165dp"
-                    app:cardCornerRadius="15dp"
-                    android:elevation="5dp"
+                    android:layout_width="355dp"
+                    android:layout_height="355dp"
                     android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
                     android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp">
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="5dp"
+                    android:elevation="5dp"
+                    app:cardCornerRadius="15dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20sp"
-                        android:text="spawned_alias"
+                        android:layout_marginLeft="5dp"
                         android:layout_marginTop="10dp"
-                        android:layout_marginLeft="5dp"/>
+                        android:text="spawned_alias"
+                        android:textSize="20sp" />
 
                     <TextView
+                        android:id="@+id/lifetime_spawnedAliasTv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="15sp"
-                        android:text="0000"
                         android:layout_gravity="bottom"
-                        android:layout_marginBottom="25dp"/>
+                        android:layout_marginBottom="25dp"
+                        android:text="0000"
+                        android:textSize="15sp" />
 
                 </androidx.cardview.widget.CardView>
 
@@ -253,8 +261,8 @@
             <TableRow android:layout_marginBottom="15dp">
 
                 <androidx.cardview.widget.CardView
-                    android:layout_height="165dp"
-                    android:layout_width="165dp"
+                    android:layout_height="355dp"
+                    android:layout_width="355dp"
                     app:cardCornerRadius="15dp"
                     android:elevation="5dp"
                     android:layout_marginLeft="20dp"
@@ -276,13 +284,14 @@
                         android:textSize="15sp"
                         android:text="0000"
                         android:layout_gravity="bottom"
-                        android:layout_marginBottom="25dp"/>
+                        android:layout_marginBottom="25dp"
+                        android:id="@+id/lifetime_killedAliasTv"/>
 
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:layout_height="165dp"
-                    android:layout_width="165dp"
+                    android:layout_height="355dp"
+                    android:layout_width="355dp"
                     app:cardCornerRadius="15dp"
                     android:elevation="5dp"
                     android:layout_marginLeft="20dp"
@@ -304,7 +313,8 @@
                         android:textSize="15sp"
                         android:text="0000"
                         android:layout_gravity="bottom"
-                        android:layout_marginBottom="25dp"/>
+                        android:layout_marginBottom="25dp"
+                        android:id="@+id/lifetime_killedHostilesTv"/>
 
                 </androidx.cardview.widget.CardView>
 
@@ -314,8 +324,8 @@
             <TableRow android:layout_marginBottom="15dp">
 
                 <androidx.cardview.widget.CardView
-                    android:layout_height="165dp"
-                    android:layout_width="165dp"
+                    android:layout_height="355dp"
+                    android:layout_width="355dp"
                     app:cardCornerRadius="15dp"
                     android:elevation="5dp"
                     android:layout_marginLeft="20dp"
@@ -337,13 +347,14 @@
                         android:textSize="15sp"
                         android:text="0000"
                         android:layout_gravity="bottom"
-                        android:layout_marginBottom="25dp"/>
+                        android:layout_marginBottom="25dp"
+                        android:id="@+id/lifetime_damageTv"/>
 
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:layout_height="165dp"
-                    android:layout_width="165dp"
+                    android:layout_height="355dp"
+                    android:layout_width="355dp"
                     app:cardCornerRadius="15dp"
                     android:elevation="5dp"
                     android:layout_marginLeft="20dp"
@@ -365,7 +376,8 @@
                         android:textSize="15sp"
                         android:text="0000"
                         android:layout_gravity="bottom"
-                        android:layout_marginBottom="25dp"/>
+                        android:layout_marginBottom="25dp"
+                        android:id="@+id/lifetime_healTv"/>
 
                 </androidx.cardview.widget.CardView>
 
