@@ -28,7 +28,7 @@ public class InsomniaFragment extends Fragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_insomnia, container, false);
-        ((InfoShowerActivity)getActivity()).sendRequest(1);
+        ((InfoShowerActivity)getActivity()).sendRequest(2);
         playerIdTv = view.findViewById(R.id.playeridTv);
         scoreTv = view.findViewById(R.id.scoreTv);
         playtimeTv = view.findViewById(R.id.playtimeTv);
