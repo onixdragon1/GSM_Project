@@ -12,8 +12,8 @@ public class MeisterboiFragment extends Fragment{
     // Store instance variables
     TextView playerIdTv, scoreTv, playtimeTv, turnCountTv, matchCountTv, winCountTv, spawnedAliasTv, killedAliasTv, killedHostilesTv, damageTv, healTv;
     // newInstance constructor for creating fragment with arguments
-    public static LifetimeFragment newInstance() {
-        LifetimeFragment fragment = new LifetimeFragment();
+    public static MeisterboiFragment newInstance() {
+        MeisterboiFragment fragment = new MeisterboiFragment();
         return fragment;
     }
 

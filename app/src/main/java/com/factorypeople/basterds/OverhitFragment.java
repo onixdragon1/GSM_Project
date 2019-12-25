@@ -12,8 +12,8 @@ public class OverhitFragment extends Fragment{
     // Store instance variables
     TextView playerIdTv, scoreTv, playtimeTv, turnCountTv, matchCountTv, winCountTv, spawnedAliasTv, killedAliasTv, killedHostilesTv, damageTv, healTv;
     // newInstance constructor for creating fragment with arguments
-    public static LifetimeFragment newInstance() {
-        LifetimeFragment fragment = new LifetimeFragment();
+    public static OverhitFragment newInstance() {
+        OverhitFragment fragment = new OverhitFragment();
         return fragment;
     }
 
@@ -29,7 +29,7 @@ public class OverhitFragment extends Fragment{
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_overhit, container, false);
         ((InfoShowerActivity)getActivity()).sendRequest(1);
-        
+
         return view;
     }
 }

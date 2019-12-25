@@ -12,8 +12,8 @@ public class OrangefamilyFragment extends Fragment{
     // Store instance variables
     TextView playerIdTv, scoreTv, playtimeTv, turnCountTv, matchCountTv, winCountTv, spawnedAliasTv, killedAliasTv, killedHostilesTv, damageTv, healTv;
     // newInstance constructor for creating fragment with arguments
-    public static LifetimeFragment newInstance() {
-        LifetimeFragment fragment = new LifetimeFragment();
+    public static OrangefamilyFragment newInstance() {
+        OrangefamilyFragment fragment = new OrangefamilyFragment();
         return fragment;
     }
 
