@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment;
 
 public class LifetimeFragment extends Fragment{
     // Store instance variables
-    TextView playerIdTv, scoreTv, playtimeTv, turnCountTv, matchCountTv, winCountTv, spawnedAliasTv, killedAliasTv, killedHostilesTv, damageTv, healTv;
+    TextView playerIdTv, scoreTv, playtimeTv, turnCountTv, matchCountTv, winCountTv, spawnedAliasTv, killedAliasTv, killedHostilesTv, damageTv, healTv, most_playedTv;
     // newInstance constructor for creating fragment with arguments
     public static LifetimeFragment newInstance() {
         LifetimeFragment fragment = new LifetimeFragment();
@@ -19,28 +19,29 @@ public class LifetimeFragment extends Fragment{
 
     // Store instance variables based on arguments passed
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
+    public void onCreate(Bundle savedInstanceState) { super.onCreate(savedInstanceState); }
 
     // Inflate the view for the fragment based on layout XML
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_lifetime, container, false);
-        ((InfoShowerActivity)getActivity()).sendRequest(1);
+        most_playedTv = view.findViewById(R.id.most_playedTv);
         playerIdTv = view.findViewById(R.id.playeridTv);
         scoreTv = view.findViewById(R.id.scoreTv);
         playtimeTv = view.findViewById(R.id.playtimeTv);
         turnCountTv = view.findViewById(R.id.turnCountTv);
         matchCountTv = view.findViewById(R.id.matchCountTv);
         winCountTv = view.findViewById(R.id.winCountTv);
+        winCountTv = view.findViewById(R.id.winCountTv);
         spawnedAliasTv = view.findViewById(R.id.spawnedAliasTv);
         killedAliasTv = view.findViewById(R.id.killedAliasTv);
         killedHostilesTv = view.findViewById(R.id.killedHostilesTv);
         damageTv = view.findViewById(R.id.damageTv);
         healTv = view.findViewById(R.id.healTv);
+        ((InfoShowerActivity)getActivity()).sendRequest(1);
 
+        most_playedTv.setText(((InfoShowerActivity)getActivity()).most_played);
         playerIdTv.setText(((InfoShowerActivity)getActivity()).pId);
         scoreTv.setText(((InfoShowerActivity)getActivity()).score);
         playtimeTv.setText(((InfoShowerActivity)getActivity()).playtime);

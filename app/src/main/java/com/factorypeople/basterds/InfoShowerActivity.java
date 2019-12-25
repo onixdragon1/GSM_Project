@@ -32,7 +32,7 @@ public class InfoShowerActivity extends AppCompatActivity {
     static TextView category;
     static String tempStr;
     ImageButton btnBack;
-    String pId, score, playtime, turn_count, match_count, win_count, spawned_alias, killed_alias, killed_hostiles, damage, heal;
+    String pId, score, playtime, turn_count, match_count, win_count, spawned_alias, killed_alias, killed_hostiles, damage, heal, most_played;
     JSONObject total, insomnia, orangefamily, overhit, meisterboi;
 
     @Override
@@ -53,8 +53,6 @@ public class InfoShowerActivity extends AppCompatActivity {
         Intent intent = getIntent();
         tempStr = intent.getStringExtra("playerName");
         category.setText(tempStr + "\'s Record");
-
-        sendRequest(1);
 
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,12 +93,6 @@ public class InfoShowerActivity extends AppCompatActivity {
                     return null;
             }
         }
-
-        // Returns the page title for the top indicator
-        @Override
-        public CharSequence getPageTitle(int position) {
-            return "Page " + position;
-        }
     }
 
     public void sendRequest(final int frg_num){
@@ -116,6 +108,7 @@ public class InfoShowerActivity extends AppCompatActivity {
                         try {
                             JSONObject obj = new JSONObject();
                             pId = response.getString("pid");
+                            most_played = response.getString("most_played");
                             switch(frg_num){
                                 case 1:
                                     total = response.getJSONObject("total");
