@@ -50,11 +50,30 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:text="Id : "
+                        android:layout_gravity="top|right"
+                        android:textSize="30sp"
+                        android:layout_marginTop="17dp"
+                        android:layout_marginRight="100dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="30sp"
+                        android:text="0000"
+                        android:layout_marginTop="17dp"
+                        android:layout_gravity="top|right"
+                        android:layout_marginRight="25dp"
+                        android:id="@+id/playeridTv"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:textSize="20sp"
                         android:text="0000"
                         android:layout_gravity="bottom|center"
                         android:layout_marginBottom="25dp"
-                        android:id="@+id/lifetime_playerTv" />
+                        android:id="@+id/playerTv" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -96,7 +115,7 @@
                         android:text="0000"
                         android:layout_gravity="bottom|center"
                         android:layout_marginBottom="25dp"
-                        android:id="@+id/lifetime_scoreTv"/>
+                        android:id="@+id/scoreTv"/>
 
                 </androidx.cardview.widget.CardView>
 
@@ -125,7 +144,7 @@
                         android:text="0000"
                         android:layout_gravity="bottom|center"
                         android:layout_marginBottom="25dp"
-                        android:id="@+id/lifetime_playtimeTv"/>
+                        android:id="@+id/playtimeTv"/>
 
                 </androidx.cardview.widget.CardView>
 
@@ -159,7 +178,7 @@
                         android:text="0000"
                         android:layout_gravity="bottom|center"
                         android:layout_marginBottom="25dp"
-                        android:id="@+id/lifetime_turnCountTv"/>
+                        android:id="@+id/turnCountTv"/>
 
                 </androidx.cardview.widget.CardView>
 
@@ -188,7 +207,7 @@
                         android:text="0000"
                         android:layout_gravity="bottom|center"
                         android:layout_marginBottom="25dp"
-                        android:id="@+id/lifetime_matchCountTv"/>
+                        android:id="@+id/matchCountTv"/>
 
                 </androidx.cardview.widget.CardView>
 
@@ -216,7 +235,7 @@
                         android:textSize="35sp" />
 
                     <TextView
-                        android:id="@+id/lifetime_winCountTv"
+                        android:id="@+id/winCountTv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="bottom|center"
@@ -245,7 +264,7 @@
                         android:textSize="35sp" />
 
                     <TextView
-                        android:id="@+id/lifetime_spawnedAliasTv"
+                        android:id="@+id/spawnedAliasTv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="bottom|center"
@@ -285,7 +304,7 @@
                         android:text="0000"
                         android:layout_gravity="bottom|center"
                         android:layout_marginBottom="25dp"
-                        android:id="@+id/lifetime_killedAliasTv"/>
+                        android:id="@+id/killedAliasTv"/>
 
                 </androidx.cardview.widget.CardView>
 
@@ -314,7 +333,7 @@
                         android:text="0000"
                         android:layout_gravity="bottom|center"
                         android:layout_marginBottom="25dp"
-                        android:id="@+id/lifetime_killedHostilesTv"/>
+                        android:id="@+id/killedHostilesTv"/>
 
                 </androidx.cardview.widget.CardView>
 
@@ -348,7 +367,7 @@
                         android:text="0000"
                         android:layout_gravity="bottom|center"
                         android:layout_marginBottom="25dp"
-                        android:id="@+id/lifetime_damageTv"/>
+                        android:id="@+id/damageTv"/>
 
                 </androidx.cardview.widget.CardView>
 
@@ -377,7 +396,7 @@
                         android:text="0000"
                         android:layout_gravity="bottom|center"
                         android:layout_marginBottom="25dp"
-                        android:id="@+id/lifetime_healTv"/>
+                        android:id="@+id/healTv"/>
 
                 </androidx.cardview.widget.CardView>
 
