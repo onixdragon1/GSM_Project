@@ -33,7 +33,9 @@ public class InfoShowerActivity extends AppCompatActivity {
     static String tempStr;
     ImageButton btnBack;
     String pId, score, playtime, turn_count, match_count, win_count, spawned_alias, killed_alias, killed_hostiles, damage, heal, most_played;
+
     JSONObject total, insomnia, orangefamily, overhit, meisterboi;
+    ViewPager vpPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +44,7 @@ public class InfoShowerActivity extends AppCompatActivity {
 
         btnBack = findViewById(R.id.backBtn);
 
-        ViewPager vpPager = (ViewPager) findViewById(R.id.vpPager);
+        vpPager = (ViewPager) findViewById(R.id.vpPager);
         adapterViewPager = new MyPagerAdapter(getSupportFragmentManager());
         vpPager.setAdapter(adapterViewPager);
 
@@ -95,12 +97,11 @@ public class InfoShowerActivity extends AppCompatActivity {
         }
     }
 
-    public void sendRequest(final int frg_num){
+    public void sendRequest(){
         // RequestQueue를 새로 만들어준다.
         RequestQueue queue = Volley.newRequestQueue(this);
         // Request를 요청 할 URL
         String url ="http://donote.co:8000/api/v1/12/summary/";
-
         JsonObjectRequest jsonObjectRequest =new JsonObjectRequest(Request.Method.GET, url,null,
                 new Response.Listener<JSONObject>() {
                     @Override
@@ -108,28 +109,28 @@ public class InfoShowerActivity extends AppCompatActivity {
                         try {
                             JSONObject obj = new JSONObject();
                             pId = response.getString("pid");
-                            most_played = response.getString("most_played");
-                            switch(frg_num){
-                                case 1:
-                                    total = response.getJSONObject("total");
-                                    obj = total;
-                                    break;
-                                case 2:
-                                    insomnia = response.getJSONObject("insomnia");
-                                    obj = insomnia;
-                                    break;
-                                case 3:
-                                    orangefamily = response.getJSONObject("orangefamily");
-                                    obj = orangefamily;
-                                    break;
-                                case 4:
-                                    overhit = response.getJSONObject("overhit");
-                                    obj = overhit;
-                                    break;
-                                case 5:
-                                    meisterboi = response.getJSONObject("meisterboi");
-                                    obj = meisterboi;
-                                    break;
+                            int currentItem = vpPager.getCurrentItem();
+                            if (currentItem == 0) {
+                                total = response.getJSONObject("total");
+                                obj = total;
+                                most_played = obj.getString("most_played");
+                                Log.d("Lifetime", "1111111111111111111111111111111111111111111111111111");
+                            } else if (currentItem == 1) {
+                                insomnia = response.getJSONObject("insomnia");
+                                obj = insomnia;
+                                Log.d("Insomnia", "2222222222222222222222222222222222222222222222222222");
+                            } else if (currentItem == 2) {
+                                orangefamily = response.getJSONObject("orangefamily");
+                                obj = orangefamily;
+                                Log.d("OrangeFamily", "3333333333333333333333333333333333333333333333333333");
+                            } else if (currentItem == 3) {
+                                overhit = response.getJSONObject("overhit");
+                                obj = overhit;
+                                Log.d("Overhit", "4444444444444444444444444444444444444444444444444444");
+                            } else if (currentItem == 4) {
+                                meisterboi = response.getJSONObject("meisterboi");
+                                obj = meisterboi;
+                                Log.d("Meisterboi", "555555555555555555555555555555555555555555555555555");
                             }
                             score = obj.getString("score");
                             playtime = obj.getString("playtime");
@@ -141,7 +142,6 @@ public class InfoShowerActivity extends AppCompatActivity {
                             killed_hostiles = obj.getString("killed_hostiles");
                             damage = obj.getString("damage");
                             heal = obj.getString("heal");
-                            Log.d("id", pId);
                         }catch (JSONException e) {
                             e.printStackTrace();
                         }

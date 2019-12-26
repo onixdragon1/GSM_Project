@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
                         new Response.Listener<JSONObject>() {
                             @Override
                             public void onResponse(JSONObject response) {
-                                // Log.e("response", response.toString());
+                                Log.e("response", response.toString());
                                 Intent intent = new Intent(MainActivity.this, searchActivity.class);
                                 try {
                                     intent.putExtra("sessid", response.getString("sessid"));

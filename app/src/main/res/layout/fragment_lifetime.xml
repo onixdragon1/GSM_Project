@@ -72,7 +72,7 @@
                         android:textSize="20sp"
                         android:text="most played occupation group ▼"
                         android:layout_gravity="bottom|center"
-                        android:layout_marginBottom="25dp"/>
+                        android:layout_marginBottom="35dp"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -80,7 +80,8 @@
                         android:textSize="20sp"
                         android:text="0000"
                         android:layout_gravity="bottom|center"
-                        android:id="@+id/most_playedTv" />
+                        android:id="@+id/most_playedTv"
+                        android:layout_marginBottom="5dp"/>
 
                     <TextView
                         android:layout_width="wrap_content"

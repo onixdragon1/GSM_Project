@@ -1,6 +1,7 @@
 package com.factorypeople.basterds;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,7 +29,7 @@ public class OrangefamilyFragment extends Fragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_orangefamily, container, false);
-        ((InfoShowerActivity)getActivity()).sendRequest(4);
+        ((InfoShowerActivity)getActivity()).sendRequest();
         playerIdTv = view.findViewById(R.id.playeridTv);
         scoreTv = view.findViewById(R.id.scoreTv);
         playtimeTv = view.findViewById(R.id.playtimeTv);
@@ -40,6 +41,7 @@ public class OrangefamilyFragment extends Fragment{
         killedHostilesTv = view.findViewById(R.id.killedHostilesTv);
         damageTv = view.findViewById(R.id.damageTv);
         healTv = view.findViewById(R.id.healTv);
+        Log.i("classified", "OrangefamilyClass is working!!!!!");
 
         playerIdTv.setText(((InfoShowerActivity)getActivity()).pId);
         scoreTv.setText(((InfoShowerActivity)getActivity()).score);
