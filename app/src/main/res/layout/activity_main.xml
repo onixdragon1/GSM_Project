@@ -1,80 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-xmlns:android="http://schemas.android.com/apk/res/android"
-android:orientation="vertical"
-android:layout_width="match_parent"
-android:layout_height="match_parent">
-
-<TextView
-    android:id="@+id/textView"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="로그인페이지"
-    android:layout_gravity="center_horizontal"
-    android:layout_marginTop="100dp"
-    android:layout_marginBottom="80dp"
-    android:textSize="25dp"/>
-
-<LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:layout_gravity="center_horizontal">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1a1180">
+
+    <TextView
+        android:id="@+id/IntroView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Basterds:  Hair-loss"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="100dp"
+        android:textSize="60sp"
+        android:textColor="#cce6c6"
+        android:fontFamily="@font/nanumsquareroundeb"/>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="로그인페이지"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="80dp"
+        android:textSize="25dp"
+        android:textColor="#cce6c6"
+        android:fontFamily="@font/nanumsquareroundb"/>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:orientation="horizontal"
-        android:padding="10dp">
+        android:orientation="vertical"
+        android:layout_gravity="center_horizontal">
 
-        <TextView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ID"
-            android:layout_marginRight="10dp"
-            android:textSize="30dp"/>
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:padding="10dp">
 
-        <EditText
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ID"
+                android:layout_marginRight="10dp"
+                android:textSize="30dp"
+                android:textColor="#cce6c6"
+                android:fontFamily="@font/nanumsquareroundeb"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="아이디를 입력해주세요"
+                android:textColorHint="#ffffff"
+                android:textSize="25dp"
+                android:textColor="#ffffff"
+                android:id="@+id/inputId"
+                android:fontFamily="@font/nanumsquareroundb"/>
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="아이디를 입력해주세요"
-            android:textSize="25dp"
-            android:id="@+id/inputId"/>
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PW"
+                android:layout_marginRight="10dp"
+                android:textSize="30dp"
+                android:textColor="#cce6c6"
+                android:fontFamily="@font/nanumsquareroundeb"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="비밀번호를 입력해주세요"
+                android:textSize="25dp"
+                android:textColorHint="#ffffff"
+                android:textColor="#ffffff"
+                android:id="@+id/inputPw"
+                android:fontFamily="@font/nanumsquareroundb"/>
+
+        </LinearLayout>
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:orientation="horizontal"
-        android:padding="10dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="PW"
-            android:layout_marginRight="10dp"
-            android:textSize="30dp"/>
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="비밀번호를 입력해주세요"
-            android:textSize="25dp"
-            android:id="@+id/inputPw"/>
-
-    </LinearLayout>
-
-</LinearLayout>
-
-<Button
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="로그인"
-    android:id="@+id/btnLogin"
-    android:layout_gravity="center"
-    android:layout_marginTop="25dp"/>
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:text="로그인"
+        android:textSize="25sp"
+        android:id="@+id/btnLogin"
+        android:layout_gravity="center"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/rounded_layout"
+        android:fontFamily="@font/nanumsquareroundeb"
+        android:textColor="#1a1180"/>
 
 </LinearLayout>

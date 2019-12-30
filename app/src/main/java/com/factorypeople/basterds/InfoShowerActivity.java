@@ -82,77 +82,23 @@ public class InfoShowerActivity extends AppCompatActivity {
         public Fragment getItem(int position) {
             switch (position) {
                 case 0:
-                    return LifetimeFragment.newInstance();
+                    LifetimeFragment frg_lifetime = new LifetimeFragment();
+                    return frg_lifetime;
                 case 1:
-                    return InsomniaFragment.newInstance();
+                    InsomniaFragment frg_insomnia = new InsomniaFragment();
+                    return frg_insomnia;
                 case 2:
-                    return OrangefamilyFragment.newInstance();
+                    OrangefamilyFragment frg_orangefamily = new OrangefamilyFragment();
+                    return frg_orangefamily;
                 case 3:
-                    return OverhitFragment.newInstance();
+                    OverhitFragment frg_overhit = new OverhitFragment();
+                    return frg_overhit;
                 case 4:
-                    return MeisterboiFragment.newInstance();
+                    MeisterboiFragment frg_meisterboi = new MeisterboiFragment();
+                    return frg_meisterboi;
                 default:
                     return null;
             }
         }
-    }
-
-    public void sendRequest(){
-        // RequestQueue를 새로 만들어준다.
-        RequestQueue queue = Volley.newRequestQueue(this);
-        // Request를 요청 할 URL
-        String url ="http://donote.co:8000/api/v1/12/summary/";
-        JsonObjectRequest jsonObjectRequest =new JsonObjectRequest(Request.Method.GET, url,null,
-                new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        try {
-                            JSONObject obj = new JSONObject();
-                            pId = response.getString("pid");
-                            int currentItem = vpPager.getCurrentItem();
-                            if (currentItem == 0) {
-                                total = response.getJSONObject("total");
-                                obj = total;
-                                most_played = obj.getString("most_played");
-                                Log.d("Lifetime", "1111111111111111111111111111111111111111111111111111");
-                            } else if (currentItem == 1) {
-                                insomnia = response.getJSONObject("insomnia");
-                                obj = insomnia;
-                                Log.d("Insomnia", "2222222222222222222222222222222222222222222222222222");
-                            } else if (currentItem == 2) {
-                                orangefamily = response.getJSONObject("orangefamily");
-                                obj = orangefamily;
-                                Log.d("OrangeFamily", "3333333333333333333333333333333333333333333333333333");
-                            } else if (currentItem == 3) {
-                                overhit = response.getJSONObject("overhit");
-                                obj = overhit;
-                                Log.d("Overhit", "4444444444444444444444444444444444444444444444444444");
-                            } else if (currentItem == 4) {
-                                meisterboi = response.getJSONObject("meisterboi");
-                                obj = meisterboi;
-                                Log.d("Meisterboi", "555555555555555555555555555555555555555555555555555");
-                            }
-                            score = obj.getString("score");
-                            playtime = obj.getString("playtime");
-                            turn_count = obj.getString("turn_count");
-                            match_count = obj.getString("match_count");
-                            win_count = obj.getString("win_count");
-                            spawned_alias = obj.getString("spawned_alias");
-                            killed_alias = obj.getString("killed_alias");
-                            killed_hostiles = obj.getString("killed_hostiles");
-                            damage = obj.getString("damage");
-                            heal = obj.getString("heal");
-                        }catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                },new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(), "That didn't work!", Toast.LENGTH_SHORT).show();
-            }
-        });
-        // queue에 Request를 추가해준다.
-        queue.add(jsonObjectRequest);
     }
 }
