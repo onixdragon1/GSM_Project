@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Basterds</string>
-    <string name="mainPage_Intro">Basterds: Hair-naked</string>
-    <string name="hint_search">Search a nickname</string>
+    <string name="mainPage_Intro">Basterds: Hair-loss</string>
+    <string name="hint_search">Search a Player ID</string>
     <string name="Lifetime">LifeTime</string>
     <string name="Insomnia">Insomnia</string>
     <string name="Orangefamily">OrangeFamily</string>

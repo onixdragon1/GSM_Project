@@ -32,9 +32,6 @@ public class InfoShowerActivity extends AppCompatActivity {
     static TextView category;
     static String tempStr;
     ImageButton btnBack;
-    String pId, score, playtime, turn_count, match_count, win_count, spawned_alias, killed_alias, killed_hostiles, damage, heal, most_played;
-
-    JSONObject total, insomnia, orangefamily, overhit, meisterboi;
     ViewPager vpPager;
 
     @Override

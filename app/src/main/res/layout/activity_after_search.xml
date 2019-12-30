@@ -4,7 +4,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="#ffffff"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <FrameLayout
@@ -29,7 +29,8 @@
             android:layout_height="wrap_content"
             android:textSize="25sp"
             android:layout_gravity="center"
-            android:id="@+id/categoryTextView"/>
+            android:id="@+id/categoryTextView"
+            android:textColor="#999"/>
 
     </FrameLayout>
 

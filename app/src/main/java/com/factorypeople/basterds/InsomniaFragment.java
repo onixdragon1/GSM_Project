@@ -54,7 +54,7 @@ public class InsomniaFragment extends Fragment{
         // RequestQueue를 새로 만들어준다.
         RequestQueue queue = Volley.newRequestQueue(getActivity().getApplicationContext());
         // Request를 요청 할 URL
-        String url ="http://donote.co:8000/api/v1/12/summary/";
+        String url ="http://donote.co:8000/api/v1/b77c255b90269c87abbedf893e62c7af/summary/";
         JsonObjectRequest jsonObjectRequest =new JsonObjectRequest(Request.Method.GET, url,null,
                 new Response.Listener<JSONObject>() {
                     @Override
