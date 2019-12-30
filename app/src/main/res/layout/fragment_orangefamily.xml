@@ -213,7 +213,7 @@
 
         </TableRow>
 
-        <!-- win_count/spawned_alias Section -->
+        <!-- win_count/spawned Section -->
         <TableRow android:layout_marginBottom="15dp">
 
             <androidx.cardview.widget.CardView
@@ -260,11 +260,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:layout_marginTop="10dp"
-                    android:text="spawned_alias"
+                    android:text="spawned"
                     android:textSize="35sp" />
 
                 <TextView
-                    android:id="@+id/spawnedAliasTv"
+                    android:id="@+id/spawnedTv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom|center"
@@ -276,7 +276,7 @@
 
         </TableRow>
 
-        <!-- killed_alias/killed_hostiles Section -->
+        <!-- killed/damage Section -->
         <TableRow android:layout_marginBottom="15dp">
 
             <androidx.cardview.widget.CardView
@@ -293,7 +293,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="35sp"
-                    android:text="killed_alias"
+                    android:text="killed"
                     android:layout_marginTop="10dp"
                     android:layout_marginLeft="5dp"/>
 
@@ -304,43 +304,9 @@
                     android:text="0000"
                     android:layout_gravity="bottom|center"
                     android:layout_marginBottom="25dp"
-                    android:id="@+id/killedAliasTv"/>
+                    android:id="@+id/killedTv"/>
 
             </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_height="355dp"
-                android:layout_width="355dp"
-                app:cardCornerRadius="15dp"
-                android:elevation="5dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="35sp"
-                    android:text="killed_hostiles"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginLeft="5dp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="15sp"
-                    android:text="0000"
-                    android:layout_gravity="bottom|center"
-                    android:layout_marginBottom="25dp"
-                    android:id="@+id/killedHostilesTv"/>
-
-            </androidx.cardview.widget.CardView>
-
-        </TableRow>
-
-        <!-- damage/heal Section -->
-        <TableRow android:layout_marginBottom="15dp">
 
             <androidx.cardview.widget.CardView
                 android:layout_height="355dp"
@@ -368,35 +334,6 @@
                     android:layout_gravity="bottom|center"
                     android:layout_marginBottom="25dp"
                     android:id="@+id/damageTv"/>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_height="355dp"
-                android:layout_width="355dp"
-                app:cardCornerRadius="15dp"
-                android:elevation="5dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="35sp"
-                    android:text="heal"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginLeft="5dp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="15sp"
-                    android:text="0000"
-                    android:layout_gravity="bottom|center"
-                    android:layout_marginBottom="25dp"
-                    android:id="@+id/healTv"/>
 
             </androidx.cardview.widget.CardView>
 

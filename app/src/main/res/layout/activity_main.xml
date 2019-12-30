@@ -4,7 +4,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1a1180">
+    android:background="@drawable/basterds_background">
 
     <TextView
         android:id="@+id/IntroView"
@@ -12,8 +12,8 @@
         android:layout_height="wrap_content"
         android:text="Basterds:  Hair-loss"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="150dp"
         android:textSize="60sp"
         android:textColor="#cce6c6"
         android:fontFamily="@font/nanumsquareroundeb"/>

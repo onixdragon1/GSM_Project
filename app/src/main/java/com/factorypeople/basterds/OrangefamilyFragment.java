@@ -21,10 +21,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class OrangefamilyFragment extends Fragment{
-    String pId, score, playtime, turn_count, match_count, win_count, spawned_alias, killed_alias, killed_hostiles, damage, heal;
-    JSONObject orange;
+    String pId, score, playtime, turn_count, match_count, win_count, spawned, killed, damage;
+    JSONObject orangefamily;
     // Store instance variables
-    TextView playerIdTv, scoreTv, playtimeTv, turnCountTv, matchCountTv, winCountTv, spawnedAliasTv, killedAliasTv, killedHostilesTv, damageTv, healTv;
+    TextView playerIdTv, scoreTv, playtimeTv, turnCountTv, matchCountTv, winCountTv, spawnedTv, killedTv, damageTv;
 
     // Store instance variables based on arguments passed
     @Override
@@ -43,11 +43,9 @@ public class OrangefamilyFragment extends Fragment{
         turnCountTv = view.findViewById(R.id.turnCountTv);
         matchCountTv = view.findViewById(R.id.matchCountTv);
         winCountTv = view.findViewById(R.id.winCountTv);
-        spawnedAliasTv = view.findViewById(R.id.spawnedAliasTv);
-        killedAliasTv = view.findViewById(R.id.killedAliasTv);
-        killedHostilesTv = view.findViewById(R.id.killedHostilesTv);
+        spawnedTv = view.findViewById(R.id.spawnedTv);
+        killedTv = view.findViewById(R.id.killedTv);
         damageTv = view.findViewById(R.id.damageTv);
-        healTv = view.findViewById(R.id.healTv);
         sendRequest();
         return view;
     }
@@ -64,18 +62,16 @@ public class OrangefamilyFragment extends Fragment{
                         try {
                             JSONObject obj = new JSONObject();
                             pId = response.getString("pid");
-                            orange = response.getJSONObject("orangefamily");
-                            obj = orange;
+                            orangefamily = response.getJSONObject("orangefamily");
+                            obj = orangefamily;
                             score = obj.getString("score");
                             playtime = obj.getString("playtime");
                             turn_count = obj.getString("turn_count");
                             match_count = obj.getString("match_count");
                             win_count = obj.getString("win_count");
-                            spawned_alias = obj.getString("spawned_alias");
-                            killed_alias = obj.getString("killed_alias");
-                            killed_hostiles = obj.getString("killed_hostiles");
+                            spawned = obj.getString("spawned");
+                            killed = obj.getString("killed");
                             damage = obj.getString("damage");
-                            heal = obj.getString("heal");
 
                             //setting all cardview with data
                             playerIdTv.setText(pId);
@@ -84,11 +80,9 @@ public class OrangefamilyFragment extends Fragment{
                             turnCountTv.setText(turn_count);
                             matchCountTv.setText(match_count);
                             winCountTv.setText(win_count);
-                            spawnedAliasTv.setText(spawned_alias);
-                            killedAliasTv.setText(killed_alias);
-                            killedHostilesTv.setText(killed_hostiles);
+                            spawnedTv.setText(spawned);
+                            killedTv.setText(killed);
                             damageTv.setText(damage);
-                            healTv.setText(heal);
                         }catch (JSONException e) {
                             e.printStackTrace();
                         }
