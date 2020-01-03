@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#1a1180">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/IntroduceTv"
+        android:text="@string/Match"
+        android:layout_gravity="center_horizontal"
+        android:textSize="30sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="25dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp">
+
+            <!-- Player Section -->
+            <TableRow android:layout_marginBottom="15dp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_height="355dp"
+                    android:layout_width="match_parent"
+                    app:cardCornerRadius="15dp"
+                    android:elevation="5dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_span="2"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="40sp"
+                        android:text="Player"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="5dp"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Id : "
+                            android:layout_gravity="top|right"
+                            android:textSize="30sp"
+                            android:layout_marginTop="17dp"
+                            android:layout_marginRight="10dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="30sp"
+                            android:text="0000"
+                            android:layout_marginTop="17dp"
+                            android:layout_gravity="top|right"
+                            android:layout_marginRight="25dp"
+                            android:id="@+id/playeridTv"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="20dp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="25dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="25sp"
+                                android:text="most played group ▼"
+                                android:layout_gravity="center"
+                                android:layout_marginBottom="10dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="20sp"
+                                android:text="0000"
+                                android:layout_gravity="center"
+                                android:id="@+id/most_playedTv"
+                                android:layout_marginBottom="5dp"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_gravity="center">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="25sp"
+                                android:text="score average ▼"
+                                android:layout_gravity="center"
+                                android:layout_marginBottom="10dp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="20sp"
+                                android:text="0000"
+                                android:layout_gravity="center"
+                                android:id="@+id/avg_scoreTv"
+                                android:layout_marginBottom="5dp"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="25dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="25sp"
+                                android:text="best played group ▼"
+                                android:layout_gravity="center"
+                                android:layout_marginBottom="10dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="20sp"
+                                android:text="0000"
+                                android:layout_gravity="center"
+                                android:id="@+id/best_playedTv"
+                                android:layout_marginBottom="5dp"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </TableRow>
+
+            <!-- score/playtime Section -->
+            <TableRow android:layout_marginBottom="15dp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_height="355dp"
+                    android:layout_width="355dp"
+                    app:cardCornerRadius="15dp"
+                    android:elevation="5dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="35sp"
+                        android:text="score"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="5dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:text="0000"
+                        android:layout_gravity="bottom|center"
+                        android:layout_marginBottom="25dp"
+                        android:id="@+id/scoreTv"/>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_height="355dp"
+                    android:layout_width="355dp"
+                    app:cardCornerRadius="15dp"
+                    android:elevation="5dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="35sp"
+                        android:text="playtime"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="5dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:text="0000"
+                        android:layout_gravity="bottom|center"
+                        android:layout_marginBottom="25dp"
+                        android:id="@+id/playtimeTv"/>
+
+                </androidx.cardview.widget.CardView>
+
+            </TableRow>
+
+            <!-- turn_count/match_count Section -->
+            <TableRow android:layout_marginBottom="15dp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_height="355dp"
+                    android:layout_width="355dp"
+                    app:cardCornerRadius="15dp"
+                    android:elevation="5dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="35sp"
+                        android:text="turn_count"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="5dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:text="0000"
+                        android:layout_gravity="bottom|center"
+                        android:layout_marginBottom="25dp"
+                        android:id="@+id/turnCountTv"/>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_height="355dp"
+                    android:layout_width="355dp"
+                    app:cardCornerRadius="15dp"
+                    android:elevation="5dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="35sp"
+                        android:text="match_count"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="5dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:text="0000"
+                        android:layout_gravity="bottom|center"
+                        android:layout_marginBottom="25dp"
+                        android:id="@+id/matchCountTv"/>
+
+                </androidx.cardview.widget.CardView>
+
+            </TableRow>
+
+            <!-- win_count/spawned Section -->
+            <TableRow android:layout_marginBottom="15dp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="355dp"
+                    android:layout_height="355dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="5dp"
+                    android:elevation="5dp"
+                    app:cardCornerRadius="15dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+                        android:text="win_count"
+                        android:textSize="35sp" />
+
+                    <TextView
+                        android:id="@+id/winCountTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|center"
+                        android:layout_marginBottom="25dp"
+                        android:text="0000"
+                        android:textSize="15sp" />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="355dp"
+                    android:layout_height="355dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="5dp"
+                    android:elevation="5dp"
+                    app:cardCornerRadius="15dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+                        android:text="spawned"
+                        android:textSize="35sp" />
+
+                    <TextView
+                        android:id="@+id/spawnedTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|center"
+                        android:layout_marginBottom="25dp"
+                        android:text="0000"
+                        android:textSize="15sp" />
+
+                </androidx.cardview.widget.CardView>
+
+            </TableRow>
+
+            <!-- killed/damage Section -->
+            <TableRow android:layout_marginBottom="15dp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_height="355dp"
+                    android:layout_width="355dp"
+                    app:cardCornerRadius="15dp"
+                    android:elevation="5dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="35sp"
+                        android:text="killed"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="5dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:text="0000"
+                        android:layout_gravity="bottom|center"
+                        android:layout_marginBottom="25dp"
+                        android:id="@+id/killedTv"/>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_height="355dp"
+                    android:layout_width="355dp"
+                    app:cardCornerRadius="15dp"
+                    android:elevation="5dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="35sp"
+                        android:text="damage"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="5dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:text="0000"
+                        android:layout_gravity="bottom|center"
+                        android:layout_marginBottom="25dp"
+                        android:id="@+id/damageTv"/>
+
+                </androidx.cardview.widget.CardView>
+
+            </TableRow>
+
+        </TableLayout>
+
+    </ScrollView>
+
+</LinearLayout>

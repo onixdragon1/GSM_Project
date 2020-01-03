@@ -8,4 +8,6 @@
     <string name="Overhit">Overhit</string>
     <string name="Meisterboi">Meisterboi</string>
     <string name="Statistic">Statistic</string>
+    <string name="Chart">Chart Record</string>
+    <string name="Match">Match Record</string>
 </resources>

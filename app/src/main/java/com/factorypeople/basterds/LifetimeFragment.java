@@ -1,10 +1,13 @@
 package com.factorypeople.basterds;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.service.autofill.FieldClassification;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,6 +19,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.github.mikephil.charting.charts.Chart;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -23,6 +27,7 @@ import org.json.JSONObject;
 public class LifetimeFragment extends Fragment{
     String pId, score, playtime, turn_count, match_count, win_count, spawned, killed, damage, most_played, best_played, avg_score;
     JSONObject lifetime;
+    Button matchBtn, chartBtn;
     String player;
     // Store instance variables
     TextView playerIdTv, scoreTv, playtimeTv, turnCountTv, matchCountTv, winCountTv, spawnedTv, killedTv, damageTv, most_playedTv, best_playedTv, avg_scoreTv;
@@ -50,7 +55,28 @@ public class LifetimeFragment extends Fragment{
         spawnedTv = view.findViewById(R.id.spawnedTv);
         killedTv = view.findViewById(R.id.killedTv);
         damageTv = view.findViewById(R.id.damageTv);
+
+        matchBtn = view.findViewById(R.id.btnMatchDialog);
+        chartBtn = view.findViewById(R.id.btnChartDialog);
         sendRequest();
+
+        matchBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), MatchActivity.class);
+                intent.putExtra("id", playerIdTv.getText().toString());
+                startActivity(intent);
+            }
+        });
+
+        chartBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), ChartActivity.class);
+                intent.putExtra("id", playerIdTv.getText().toString());
+                startActivity(intent);
+            }
+        });
         return view;
     }
 
