@@ -21,6 +21,8 @@
 
         <activity android:name=".searchActivity"/>
         <activity android:name=".InfoShowerActivity"/>
+        <activity android:name=".ChartActivity"/>
+        <activity android:name=".MatchActivity"/>
     </application>
 
 </manifest>
