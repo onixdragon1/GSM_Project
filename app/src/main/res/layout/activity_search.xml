@@ -11,12 +11,12 @@
         android:layout_height="wrap_content"
         android:text="@string/mainPage_Intro"
         android:layout_gravity="center_horizontal"
-        android:textSize="50sp"
+        android:textSize="55sp"
         android:layout_marginBottom="150dp"
         android:textColor="#cce6c6"/>
 
     <LinearLayout
-        android:layout_width="355dp"
+        android:layout_width="425dp"
         android:layout_height="60dp"
         android:orientation="horizontal"
         android:layout_gravity="center"
@@ -30,7 +30,7 @@
             android:textColorHint="#1a1180"
             android:textSize="20sp"
             android:layout_gravity="center_vertical"
-            android:width="305dp"
+            android:width="370dp"
             android:textColor="#1a1180"/>
 
         <ImageButton

@@ -30,7 +30,7 @@
             android:textSize="25sp"
             android:layout_gravity="center"
             android:id="@+id/categoryTextView"
-            android:textColor="#999"/>
+            android:textColor="#1a1180"/>
 
     </FrameLayout>
 
@@ -42,7 +42,7 @@
 
     <me.relex.circleindicator.CircleIndicator
         android:id="@+id/indicator"
-        app:ci_drawable="@drawable/black_radius"
+        app:ci_drawable="@drawable/circleindicator_radius"
         app:ci_height="6dp"
         app:ci_width="6dp"
         app:ci_margin="4dp"

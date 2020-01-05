@@ -74,6 +74,8 @@ public class LifetimeFragment extends Fragment{
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), ChartActivity.class);
                 intent.putExtra("id", playerIdTv.getText().toString());
+                intent.putExtra("MatchCount", Integer.parseInt(matchCountTv.getText().toString()));
+                intent.putExtra("WinCount", Integer.parseInt(winCountTv.getText().toString()));
                 startActivity(intent);
             }
         });

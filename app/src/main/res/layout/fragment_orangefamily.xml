@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#1a1180">
+    android:background="@drawable/basterds_background">
 
     <TextView
         android:layout_width="wrap_content"
@@ -33,12 +33,13 @@
                 android:layout_height="355dp"
                 android:layout_width="match_parent"
                 app:cardCornerRadius="15dp"
-                android:elevation="5dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_span="2"
                 android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp">
+                android:layout_marginBottom="5dp"
+                app:cardBackgroundColor="#73ffffff"
+                app:cardElevation="15dp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -103,7 +104,8 @@
                 android:layout_height="355dp"
                 android:layout_width="355dp"
                 app:cardCornerRadius="15dp"
-                android:elevation="5dp"
+                app:cardBackgroundColor="#73ffffff"
+                app:cardElevation="15dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="5dp"
@@ -132,7 +134,8 @@
                 android:layout_height="355dp"
                 android:layout_width="355dp"
                 app:cardCornerRadius="15dp"
-                android:elevation="5dp"
+                app:cardBackgroundColor="#73ffffff"
+                app:cardElevation="15dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="5dp"
@@ -166,7 +169,8 @@
                 android:layout_height="355dp"
                 android:layout_width="355dp"
                 app:cardCornerRadius="15dp"
-                android:elevation="5dp"
+                app:cardBackgroundColor="#73ffffff"
+                app:cardElevation="15dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="5dp"
@@ -195,7 +199,8 @@
                 android:layout_height="355dp"
                 android:layout_width="355dp"
                 app:cardCornerRadius="15dp"
-                android:elevation="5dp"
+                app:cardBackgroundColor="#73ffffff"
+                app:cardElevation="15dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="5dp"
@@ -232,7 +237,8 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="5dp"
-                android:elevation="5dp"
+                app:cardBackgroundColor="#73ffffff"
+                app:cardElevation="15dp"
                 app:cardCornerRadius="15dp">
 
                 <TextView
@@ -261,7 +267,8 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="5dp"
-                android:elevation="5dp"
+                app:cardBackgroundColor="#73ffffff"
+                app:cardElevation="15dp"
                 app:cardCornerRadius="15dp">
 
                 <TextView
@@ -292,7 +299,8 @@
                 android:layout_height="355dp"
                 android:layout_width="355dp"
                 app:cardCornerRadius="15dp"
-                android:elevation="5dp"
+                app:cardBackgroundColor="#73ffffff"
+                app:cardElevation="15dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="5dp"
@@ -321,7 +329,8 @@
                 android:layout_height="355dp"
                 android:layout_width="355dp"
                 app:cardCornerRadius="15dp"
-                android:elevation="5dp"
+                app:cardBackgroundColor="#73ffffff"
+                app:cardElevation="15dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="5dp"
