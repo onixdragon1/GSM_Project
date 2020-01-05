@@ -30,7 +30,7 @@ public class InfoShowerActivity extends AppCompatActivity {
 
     FragmentPagerAdapter adapterViewPager;
     static TextView category;
-    static String tempStr;
+    String tempStr;
     ImageButton btnBack;
     ViewPager vpPager;
 

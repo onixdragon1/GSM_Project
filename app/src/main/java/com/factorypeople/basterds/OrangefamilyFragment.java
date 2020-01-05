@@ -53,8 +53,9 @@ public class OrangefamilyFragment extends Fragment{
     public void sendRequest(){
         // RequestQueue를 새로 만들어준다.
         RequestQueue queue = Volley.newRequestQueue(getActivity().getApplicationContext());
+        pId = ((InfoShowerActivity)getActivity()).tempStr;
         // Request를 요청 할 URL
-        String url ="http://donote.co:8000/api/v1/b77c255b90269c87abbedf893e62c7af/summary/";
+        String url ="http://donote.co:8000/api/v1/" + pId + "/summary/";
         JsonObjectRequest jsonObjectRequest =new JsonObjectRequest(Request.Method.GET, url,null,
                 new Response.Listener<JSONObject>() {
                     @Override

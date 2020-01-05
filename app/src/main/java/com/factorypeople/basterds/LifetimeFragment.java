@@ -2,8 +2,6 @@ package com.factorypeople.basterds;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.service.autofill.FieldClassification;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,7 +17,6 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.github.mikephil.charting.charts.Chart;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -58,13 +55,13 @@ public class LifetimeFragment extends Fragment{
 
         matchBtn = view.findViewById(R.id.btnMatchDialog);
         chartBtn = view.findViewById(R.id.btnChartDialog);
+
         sendRequest();
 
         matchBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), MatchActivity.class);
-                intent.putExtra("id", playerIdTv.getText().toString());
                 startActivity(intent);
             }
         });
@@ -85,8 +82,9 @@ public class LifetimeFragment extends Fragment{
     public void sendRequest(){
         // RequestQueue를 새로 만들어준다.
         RequestQueue queue = Volley.newRequestQueue(getActivity().getApplicationContext());
+        pId = ((InfoShowerActivity)getActivity()).tempStr;
         // Request를 요청 할 URL
-        String url ="http://donote.co:8000/api/v1/b77c255b90269c87abbedf893e62c7af/summary/";
+        String url ="http://donote.co:8000/api/v1/" + pId + "/summary/";
         JsonObjectRequest jsonObjectRequest =new JsonObjectRequest(Request.Method.GET, url,null,
                 new Response.Listener<JSONObject>() {
                     @Override
