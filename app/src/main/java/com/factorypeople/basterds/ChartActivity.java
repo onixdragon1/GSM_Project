@@ -1,34 +1,68 @@
 package com.factorypeople.basterds;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.VolleyLog;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
+import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.components.AxisBase;
+import com.github.mikephil.charting.components.XAxis;
+import com.github.mikephil.charting.components.YAxis;
+import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.data.LineData;
+import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
+import com.github.mikephil.charting.formatter.ValueFormatter;
 import com.github.mikephil.charting.utils.ColorTemplate;
+import com.google.gson.JsonIOException;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.math.BigDecimal;
+import java.math.MathContext;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class ChartActivity extends AppCompatActivity {
     private PieChart pieChart;
-    String pId;
+    private LineChart lineChart;
+    String pId, killed;
     BigDecimal matchCount, winCount, operate_result;
-    TextView playerIdTv;
+    TextView playerIdTv_pie, playerIdTv_line;
+    Queue<String> killQueue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chart);
 
+        lineChart = (LineChart)findViewById(R.id.killRate_chart);
         pieChart = (PieChart)findViewById(R.id.winRate_chart);
-        playerIdTv = (TextView)findViewById(R.id.playerId_chart);
+        playerIdTv_pie = (TextView)findViewById(R.id.playerId_pieChart);
+        playerIdTv_line = (TextView)findViewById(R.id.playerId_lineChart);
 
         Intent intent = getIntent();
         pId = intent.getStringExtra("id");
@@ -36,22 +70,96 @@ public class ChartActivity extends AppCompatActivity {
         winCount = BigDecimal.valueOf(intent.getIntExtra("WinCount", 0));
         Log.i("matchCount", matchCount+"");
         Log.i("winCount", winCount+"");
-        playerIdTv.setText(pId);
+        playerIdTv_pie.setText(pId);
+        playerIdTv_line.setText(pId);
 
-        PieDataSet pieDataSet = new PieDataSet(getData(), "Win-Lose Rate");
+        killQueue = new LinkedList<>();
+
+        PieDataSet pieDataSet = new PieDataSet(getPieData(), "Win-Lose Rate");
         pieDataSet.setColors(ColorTemplate.JOYFUL_COLORS);
         PieData pieData = new PieData(pieDataSet);
         pieChart.setData(pieData);
         pieChart.animateXY(500, 500);
         pieChart.invalidate();
+
+        sendRequest();
     }
 
-    private ArrayList getData(){
-        ArrayList<PieEntry> entries = new ArrayList<>();
-        operate_result = winCount.divide(matchCount);
-        entries.add(new PieEntry((float)operate_result.doubleValue()*100, "Win"));
-        entries.add(new PieEntry((1-(float)operate_result.doubleValue())*100, "Lose"));
-        Log.i("rate_win", (float)operate_result.doubleValue()+"");
-        return entries;
+    private ArrayList<Entry> getKillData(){
+        ArrayList<Entry> lineEntries = new ArrayList<>();
+        int len = killQueue.size();
+        for(float i=0;i<len; i++){
+            lineEntries.add(new Entry(i, BigDecimal.valueOf(Integer.parseInt(killQueue.peek())).floatValue()));
+            killQueue.poll();
+        }
+        /*lineEntries.add(new Entry(0f, 4f));
+        lineEntries.add(new Entry(1f, 1f));
+        lineEntries.add(new Entry(2f, 2f));
+        lineEntries.add(new Entry(3f, 6f));*/
+        return lineEntries;
+    }
+
+    private ArrayList<PieEntry> getPieData(){
+        ArrayList<PieEntry> pieEntries = new ArrayList<>();
+        operate_result = winCount.divide(matchCount, MathContext.DECIMAL64);
+        pieEntries.add(new PieEntry((float)operate_result.doubleValue()*100, "Win"));
+        pieEntries.add(new PieEntry((1-(float)operate_result.doubleValue())*100, "Lose"));
+        return pieEntries;
+    }
+
+    public void sendRequest(){
+        RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
+        String url ="http://donote.co:8000/api/v1/" + pId + "/match/";
+        JsonObjectRequest jsonObjectRequest =new JsonObjectRequest(Request.Method.GET, url,null,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        try {
+                            JSONArray dataObj = response.getJSONArray("data");
+                            for(int i=0;i<dataObj.length();i++){
+                                JSONObject obj = dataObj.getJSONObject(i);
+                                Log.i("parsed Object", obj+"");
+                                killed = obj.getString("killed");
+                                Log.i("Parsed kill Record ", killed);
+                                killQueue.add(killed);
+                                Log.i("info about Queue size", "Queue size : "+killQueue.size()+"");
+
+                                LineDataSet lineDataSet = new LineDataSet(getKillData(), "Chart_KillRate");
+                                lineDataSet.setColors(ColorTemplate.JOYFUL_COLORS);
+                                XAxis xAxis = lineChart.getXAxis();
+                                xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
+                                final String[] kills = new String[]{"RecentMatch_1"};
+                                ValueFormatter formatter = new ValueFormatter() {
+                                    @Override
+                                    public String getAxisLabel(float value, AxisBase axis) {
+                                        return kills[(int) value];
+                                    }
+                                };
+                                xAxis.setGranularity(1f);
+                                xAxis.setValueFormatter(formatter);
+
+                                YAxis yAxisRight = lineChart.getAxisRight();
+                                yAxisRight.setEnabled(false);
+
+                                YAxis yAxisLeft = lineChart.getAxisLeft();
+                                yAxisLeft.setGranularity(1f);
+
+                                LineData data = new LineData(lineDataSet);
+                                lineChart.setData(data);
+                                lineChart.animateX(2500);
+                                lineChart.invalidate();
+                            }
+                        }catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+        // queue에 Request를 추가해준다.
+        queue.add(jsonObjectRequest);
     }
 }

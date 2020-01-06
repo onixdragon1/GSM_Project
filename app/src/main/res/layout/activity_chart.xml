@@ -34,7 +34,6 @@
                 app:cardElevation="15dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
-
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp">
 
@@ -69,9 +68,14 @@
                         android:layout_marginTop="17dp"
                         android:layout_gravity="top|right"
                         android:layout_marginRight="25dp"
-                        android:id="@+id/playerId_chart"/>
+                        android:id="@+id/playerId_pieChart"/>
 
                 </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Win-Lose Rate Chart"/>
 
                 <com.github.mikephil.charting.charts.PieChart
                     android:layout_width="500dp"
@@ -97,19 +101,43 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="35sp"
-                    android:text="score"
+                    android:textSize="40sp"
+                    android:text="Player"
                     android:layout_marginTop="10dp"
                     android:layout_marginLeft="5dp"/>
 
-                <TextView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="15sp"
-                    android:text="0000"
-                    android:layout_gravity="bottom|center"
-                    android:layout_marginBottom="25dp"
-                    android:id="@+id/scoreTv"/>
+                    android:layout_gravity="right"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Id : "
+                        android:layout_gravity="top|right"
+                        android:textSize="30sp"
+                        android:layout_marginTop="17dp"
+                        android:layout_marginRight="10dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="30sp"
+                        android:text="0000"
+                        android:layout_marginTop="17dp"
+                        android:layout_gravity="top|right"
+                        android:layout_marginRight="25dp"
+                        android:id="@+id/playerId_lineChart"/>
+
+                </LinearLayout>
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:layout_width="500dp"
+                    android:layout_height="500dp"
+                    android:layout_gravity="center"
+                    android:id="@+id/killRate_chart"/>
 
             </androidx.cardview.widget.CardView>
 

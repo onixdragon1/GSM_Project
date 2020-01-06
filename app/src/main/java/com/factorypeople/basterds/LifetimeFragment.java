@@ -90,7 +90,7 @@ public class LifetimeFragment extends Fragment{
                     @Override
                     public void onResponse(JSONObject response) {
                         try {
-                            JSONObject obj = new JSONObject();
+                            JSONObject obj;
                             pId = response.getString("pid");
                             lifetime = response.getJSONObject("total");
                             obj = lifetime;

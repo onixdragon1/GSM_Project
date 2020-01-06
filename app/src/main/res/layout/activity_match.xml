@@ -133,7 +133,7 @@
                         android:textSize="15sp"
                         android:text="0000"
                         android:layout_gravity="center"
-                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
                         android:id="@+id/createdTimeTv"/>
 
                     <TextView
