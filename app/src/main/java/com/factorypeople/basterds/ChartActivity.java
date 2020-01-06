@@ -52,7 +52,7 @@ public class ChartActivity extends AppCompatActivity {
     String pId, killed;
     BigDecimal matchCount, winCount, operate_result;
     TextView playerIdTv_pie, playerIdTv_line;
-    Queue<String> killQueue;
+    ArrayList<Entry> lineEntries = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,30 +73,36 @@ public class ChartActivity extends AppCompatActivity {
         playerIdTv_pie.setText(pId);
         playerIdTv_line.setText(pId);
 
-        killQueue = new LinkedList<>();
+        sendRequest();
+        make_PieChart();
+    }
 
+    private void make_PieChart(){
         PieDataSet pieDataSet = new PieDataSet(getPieData(), "Win-Lose Rate");
         pieDataSet.setColors(ColorTemplate.JOYFUL_COLORS);
         PieData pieData = new PieData(pieDataSet);
         pieChart.setData(pieData);
         pieChart.animateXY(500, 500);
         pieChart.invalidate();
-
-        sendRequest();
     }
 
-    private ArrayList<Entry> getKillData(){
-        ArrayList<Entry> lineEntries = new ArrayList<>();
-        int len = killQueue.size();
-        for(float i=0;i<len; i++){
-            lineEntries.add(new Entry(i, BigDecimal.valueOf(Integer.parseInt(killQueue.peek())).floatValue()));
-            killQueue.poll();
-        }
-        /*lineEntries.add(new Entry(0f, 4f));
-        lineEntries.add(new Entry(1f, 1f));
-        lineEntries.add(new Entry(2f, 2f));
-        lineEntries.add(new Entry(3f, 6f));*/
-        return lineEntries;
+    private void make_LineChart(){
+        LineDataSet lineDataSet = new LineDataSet(lineEntries, "Chart_KillRate");
+        lineDataSet.setColors(ColorTemplate.JOYFUL_COLORS);
+        XAxis xAxis = lineChart.getXAxis();
+        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
+        xAxis.setGranularity(1f);
+
+        YAxis yAxisRight = lineChart.getAxisRight();
+        yAxisRight.setEnabled(false);
+
+        YAxis yAxisLeft = lineChart.getAxisLeft();
+        yAxisLeft.setGranularity(1f);
+
+        LineData data = new LineData(lineDataSet);
+        lineChart.setData(data);
+        lineChart.animateX(500);
+        lineChart.invalidate();
     }
 
     private ArrayList<PieEntry> getPieData(){
@@ -116,38 +122,13 @@ public class ChartActivity extends AppCompatActivity {
                     public void onResponse(JSONObject response) {
                         try {
                             JSONArray dataObj = response.getJSONArray("data");
-                            for(int i=0;i<dataObj.length();i++){
+                            for(int i=0;i<dataObj.length();i++) {
                                 JSONObject obj = dataObj.getJSONObject(i);
-                                Log.i("parsed Object", obj+"");
+                                Log.i("parsed Object", obj + "");
                                 killed = obj.getString("killed");
-                                Log.i("Parsed kill Record ", killed);
-                                killQueue.add(killed);
-                                Log.i("info about Queue size", "Queue size : "+killQueue.size()+"");
-
-                                LineDataSet lineDataSet = new LineDataSet(getKillData(), "Chart_KillRate");
-                                lineDataSet.setColors(ColorTemplate.JOYFUL_COLORS);
-                                XAxis xAxis = lineChart.getXAxis();
-                                xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
-                                final String[] kills = new String[]{"RecentMatch_1"};
-                                ValueFormatter formatter = new ValueFormatter() {
-                                    @Override
-                                    public String getAxisLabel(float value, AxisBase axis) {
-                                        return kills[(int) value];
-                                    }
-                                };
-                                xAxis.setGranularity(1f);
-                                xAxis.setValueFormatter(formatter);
-
-                                YAxis yAxisRight = lineChart.getAxisRight();
-                                yAxisRight.setEnabled(false);
-
-                                YAxis yAxisLeft = lineChart.getAxisLeft();
-                                yAxisLeft.setGranularity(1f);
-
-                                LineData data = new LineData(lineDataSet);
-                                lineChart.setData(data);
-                                lineChart.animateX(2500);
-                                lineChart.invalidate();
+                                Log.i("Parsed kill Record ", killed + "");
+                                lineEntries.add(new Entry((float)i+1, BigDecimal.valueOf(Integer.parseInt(killed)).floatValue()));
+                                make_LineChart();
                             }
                         }catch (JSONException e) {
                             e.printStackTrace();
