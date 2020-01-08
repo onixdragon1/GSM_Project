@@ -22,7 +22,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class LifetimeFragment extends Fragment{
-    String pId, score, playtime, turn_count, match_count, win_count, spawned, killed, damage, most_played, best_played, avg_score;
+    String pId, score, playtime, turn_count, match_count, win_count, spawned, killed, damage, most_played, best_played, avg_score, pending;
     JSONObject lifetime;
     Button matchBtn, chartBtn;
     String player;
@@ -73,6 +73,7 @@ public class LifetimeFragment extends Fragment{
                 intent.putExtra("id", playerIdTv.getText().toString());
                 intent.putExtra("MatchCount", Integer.parseInt(matchCountTv.getText().toString()));
                 intent.putExtra("WinCount", Integer.parseInt(winCountTv.getText().toString()));
+                intent.putExtra("PendingCount", Integer.parseInt(pending));
                 startActivity(intent);
             }
         });
@@ -100,6 +101,7 @@ public class LifetimeFragment extends Fragment{
                             most_played = obj.getString("most_played");
                             best_played = obj.getString("best_played");
                             turn_count = obj.getString("turn_count");
+                            pending = obj.getString("pending_count");
                             match_count = obj.getString("match_count");
                             win_count = obj.getString("win_count");
                             spawned = obj.getString("spawned");

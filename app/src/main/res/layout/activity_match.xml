@@ -94,7 +94,7 @@
                         android:text="0000"
                         android:layout_marginBottom="30dp"
                         android:layout_gravity="center"
-                        android:id="@+id/played_asTv"/>
+                        android:id="@+id/played_as_matchTv"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -110,7 +110,7 @@
                         android:text="0000"
                         android:layout_gravity="center"
                         android:layout_marginBottom="20dp"
-                        android:id="@+id/statusTv"/>
+                        android:id="@+id/status_matchTv"/>
 
                 </LinearLayout>
 
@@ -118,7 +118,48 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:layout_gravity="bottom|center">
+                    android:layout_gravity="bottom|center"
+                    android:layout_marginBottom="55dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="25sp"
+                        android:text="Match Score : "
+                        android:layout_gravity="center"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:text="0000"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="15dp"
+                        android:id="@+id/score_matchTv"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="25sp"
+                        android:text="Match_Playtime : "
+                        android:layout_gravity="center"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:text="0000"
+                        android:layout_gravity="center"
+                        android:id="@+id/playtime_matchTv"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="bottom|center"
+                    android:layout_marginBottom="15dp">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -134,13 +175,13 @@
                         android:text="0000"
                         android:layout_gravity="center"
                         android:layout_marginRight="15dp"
-                        android:id="@+id/createdTimeTv"/>
+                        android:id="@+id/createdTime_matchTv"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="25sp"
-                        android:text="created_time : "
+                        android:text="terminated_time : "
                         android:layout_gravity="center"/>
 
                     <TextView
@@ -149,9 +190,124 @@
                         android:textSize="15sp"
                         android:text="0000"
                         android:layout_gravity="center"
-                        android:id="@+id/terminatedTimeTv"/>
+                        android:id="@+id/terminatedTime_matchTv"/>
 
                 </LinearLayout>
+
+                <TableLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|end"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="55dp">
+
+                    <TableRow>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="15dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="25sp"
+                                android:text="Match_turnCount▼"
+                                android:layout_gravity="center"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="15sp"
+                                android:text="0000"
+                                android:layout_gravity="center"
+                                android:layout_marginRight="15dp"
+                                android:id="@+id/turnCount_matchTv"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="15dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="25sp"
+                                android:text="Spawned Unit▼"
+                                android:layout_gravity="center"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="15sp"
+                                android:text="0000"
+                                android:layout_gravity="center"
+                                android:layout_marginRight="15dp"
+                                android:id="@+id/spawned_matchTv"/>
+
+                        </LinearLayout>
+
+                    </TableRow>
+
+                    <TableRow>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_gravity="center">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="25sp"
+                                android:text="Killed Unit▼"
+                                android:layout_gravity="center"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="15sp"
+                                android:text="0000"
+                                android:layout_gravity="center"
+                                android:layout_marginRight="15dp"
+                                android:id="@+id/killed_matchTv"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_gravity="center">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="25sp"
+                                android:text="Match Damage▼"
+                                android:layout_gravity="center"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="15sp"
+                                android:text="0000"
+                                android:layout_gravity="center"
+                                android:layout_marginRight="15dp"
+                                android:id="@+id/damage_matchTv"/>
+
+                        </LinearLayout>
+
+                    </TableRow>
+
+                </TableLayout>
 
             </androidx.cardview.widget.CardView>
 
@@ -169,19 +325,273 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="35sp"
-                    android:text="score"
+                    android:textSize="40sp"
+                    android:text="Player"
                     android:layout_marginTop="10dp"
                     android:layout_marginLeft="5dp"/>
 
-                <TextView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="15sp"
-                    android:text="0000"
+                    android:layout_gravity="right"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Id : "
+                        android:layout_gravity="top|right"
+                        android:textSize="30sp"
+                        android:layout_marginTop="17dp"
+                        android:layout_marginRight="10dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="30sp"
+                        android:text="0000"
+                        android:layout_marginTop="17dp"
+                        android:layout_gravity="top|right"
+                        android:layout_marginRight="25dp"
+                        android:id="@+id/playerId_match_2"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center|start"
+                    android:layout_marginLeft="15dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="30sp"
+                        android:text="played_as▼"
+                        android:layout_gravity="center"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:text="0000"
+                        android:layout_marginBottom="30dp"
+                        android:layout_gravity="center"
+                        android:id="@+id/played_as_matchTv_2"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="30sp"
+                        android:text="status▼"
+                        android:layout_gravity="center"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:text="0000"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="20dp"
+                        android:id="@+id/status_matchTv_2"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
                     android:layout_gravity="bottom|center"
-                    android:layout_marginBottom="25dp"
-                    android:id="@+id/scoreTv"/>
+                    android:layout_marginBottom="55dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="25sp"
+                        android:text="Match Score : "
+                        android:layout_gravity="center"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:text="0000"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="15dp"
+                        android:id="@+id/score_matchTv_2"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="25sp"
+                        android:text="Match_Playtime : "
+                        android:layout_gravity="center"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:text="0000"
+                        android:layout_gravity="center"
+                        android:id="@+id/playtime_matchTv_2"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="bottom|center"
+                    android:layout_marginBottom="15dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="25sp"
+                        android:text="created_time : "
+                        android:layout_gravity="center"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:text="0000"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="15dp"
+                        android:id="@+id/createdTime_matchTv_2"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="25sp"
+                        android:text="terminated_time : "
+                        android:layout_gravity="center"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:text="0000"
+                        android:layout_gravity="center"
+                        android:id="@+id/terminatedTime_matchTv_2"/>
+
+                </LinearLayout>
+
+                <TableLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|end"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="55dp">
+
+                    <TableRow>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="15dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="25sp"
+                                android:text="Match_turnCount▼"
+                                android:layout_gravity="center"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="15sp"
+                                android:text="0000"
+                                android:layout_gravity="center"
+                                android:layout_marginRight="15dp"
+                                android:id="@+id/turnCount_matchTv_2"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="15dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="25sp"
+                                android:text="Spawned Unit▼"
+                                android:layout_gravity="center"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="15sp"
+                                android:text="0000"
+                                android:layout_gravity="center"
+                                android:layout_marginRight="15dp"
+                                android:id="@+id/spawned_matchTv_2"/>
+
+                        </LinearLayout>
+
+                    </TableRow>
+
+                    <TableRow>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_gravity="center">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="25sp"
+                                android:text="Killed Unit▼"
+                                android:layout_gravity="center"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="15sp"
+                                android:text="0000"
+                                android:layout_gravity="center"
+                                android:layout_marginRight="15dp"
+                                android:id="@+id/killed_matchTv_2"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_gravity="center">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="25sp"
+                                android:text="Match Damage▼"
+                                android:layout_gravity="center"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="15sp"
+                                android:text="0000"
+                                android:layout_gravity="center"
+                                android:layout_marginRight="15dp"
+                                android:id="@+id/damage_matchTv_2"/>
+
+                        </LinearLayout>
+
+                    </TableRow>
+
+                </TableLayout>
 
             </androidx.cardview.widget.CardView>
 

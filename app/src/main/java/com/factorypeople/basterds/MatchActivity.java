@@ -16,10 +16,12 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 public class MatchActivity extends AppCompatActivity {
     String pId, playedAs, status, score, playtime, turn_count, spawned, killed, damage, createAt, terminatedAt;
     TextView playerIdTv, playedAsTv, statusTv, scoreTv, playtimeTv, turnCountTv, spawnedTv, killedTv, damageTv, createdAtTv, terminatedAtTv;
+    TextView playerIdTv_2, playedAsTv_2, statusTv_2, scoreTv_2, playtimeTv_2, turnCountTv_2, spawnedTv_2, killedTv_2, damageTv_2, createdAtTv_2, terminatedAtTv_2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +29,28 @@ public class MatchActivity extends AppCompatActivity {
         setContentView(R.layout.activity_match);
 
         playerIdTv = (TextView)findViewById(R.id.playerId_match);
+        playedAsTv = (TextView)findViewById(R.id.played_as_matchTv);
+        statusTv = (TextView)findViewById(R.id.status_matchTv);
+        scoreTv = (TextView)findViewById(R.id.score_matchTv);
+        playtimeTv = (TextView)findViewById(R.id.playtime_matchTv);
+        turnCountTv = (TextView)findViewById(R.id.turnCount_matchTv);
+        spawnedTv = (TextView)findViewById(R.id.spawned_matchTv);
+        killedTv = (TextView)findViewById(R.id.killed_matchTv);
+        damageTv = (TextView)findViewById(R.id.damage_matchTv);
+        createdAtTv = (TextView)findViewById(R.id.createdTime_matchTv);
+        terminatedAtTv = (TextView)findViewById(R.id.terminatedTime_matchTv);
+
+        playerIdTv_2 = (TextView)findViewById(R.id.playerId_match_2);
+        playedAsTv_2 = (TextView)findViewById(R.id.played_as_matchTv_2);
+        statusTv_2 = (TextView)findViewById(R.id.status_matchTv_2);
+        scoreTv_2 = (TextView)findViewById(R.id.score_matchTv_2);
+        playtimeTv_2 = (TextView)findViewById(R.id.playtime_matchTv_2);
+        turnCountTv_2 = (TextView)findViewById(R.id.turnCount_matchTv_2);
+        spawnedTv_2 = (TextView)findViewById(R.id.spawned_matchTv_2);
+        killedTv_2 = (TextView)findViewById(R.id.killed_matchTv_2);
+        damageTv_2 = (TextView)findViewById(R.id.damage_matchTv_2);
+        createdAtTv_2 = (TextView)findViewById(R.id.createdTime_matchTv_2);
+        terminatedAtTv_2 = (TextView)findViewById(R.id.terminatedTime_matchTv_2);
 
     }
 

@@ -50,7 +50,7 @@ public class ChartActivity extends AppCompatActivity {
     private PieChart pieChart;
     private LineChart lineChart;
     String pId, killed;
-    BigDecimal matchCount, winCount, operate_result;
+    BigDecimal matchCount, winCount, operate_result, pendingCount;
     TextView playerIdTv_pie, playerIdTv_line;
     ArrayList<Entry> lineEntries = new ArrayList<>();
 
@@ -68,6 +68,8 @@ public class ChartActivity extends AppCompatActivity {
         pId = intent.getStringExtra("id");
         matchCount = BigDecimal.valueOf(intent.getIntExtra("MatchCount", 0));
         winCount = BigDecimal.valueOf(intent.getIntExtra("WinCount", 0));
+        pendingCount = BigDecimal.valueOf(intent.getIntExtra("PendingCount", 0));
+
         Log.i("matchCount", matchCount+"");
         Log.i("winCount", winCount+"");
         playerIdTv_pie.setText(pId);
@@ -108,6 +110,7 @@ public class ChartActivity extends AppCompatActivity {
     private ArrayList<PieEntry> getPieData(){
         ArrayList<PieEntry> pieEntries = new ArrayList<>();
         operate_result = winCount.divide(matchCount, MathContext.DECIMAL64);
+        BigDecimal pendingTemp = pendingCount.divide(matchCount, MathContext.DECIMAL64);
         pieEntries.add(new PieEntry((float)operate_result.doubleValue()*100, "Win"));
         pieEntries.add(new PieEntry((1-(float)operate_result.doubleValue())*100, "Lose"));
         return pieEntries;
@@ -115,19 +118,19 @@ public class ChartActivity extends AppCompatActivity {
 
     public void sendRequest(){
         RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
-        String url ="http://donote.co:8000/api/v1/" + pId + "/match/";
+        String url ="http://donote.co:8000/api/v1/startergate/match/";
         JsonObjectRequest jsonObjectRequest =new JsonObjectRequest(Request.Method.GET, url,null,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
                         try {
                             JSONArray dataObj = response.getJSONArray("data");
-                            for(int i=0;i<dataObj.length();i++) {
+                            for(int i=0;i<dataObj.length()-25;i++) {
                                 JSONObject obj = dataObj.getJSONObject(i);
                                 Log.i("parsed Object", obj + "");
                                 killed = obj.getString("killed");
                                 Log.i("Parsed kill Record ", killed + "");
-                                lineEntries.add(new Entry((float)i+1, BigDecimal.valueOf(Integer.parseInt(killed)).floatValue()));
+                                lineEntries.add(new Entry((float)(i), BigDecimal.valueOf(Integer.parseInt(killed)).floatValue()));
                                 make_LineChart();
                             }
                         }catch (JSONException e) {
